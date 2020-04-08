@@ -24,8 +24,8 @@ public class Hash {
 		// return the BigInteger
 
 		try {
-			MessageDigest md = MessageDigest.getInstance("MD5");
-			byte[] entityBytes = md.digest(entity.getBytes());
+			MessageDigest m = MessageDigest.getInstance("MD5");
+			byte[] entityBytes = m.digest(entity.getBytes());
 			mbit = entityBytes.length;
 			String hex = toHex(entityBytes);
 
@@ -49,10 +49,10 @@ public class Hash {
 		// compute the address size = 2 ^ number of bits
 
 		// return the address size
-		BigInteger addressSize = new BigInteger("2");
-		addressSize = addressSize.pow(bitSize());
+		BigInteger addSize = new BigInteger("2");
+		addSize = addSize.pow(bitSize());
 
-		return addressSize;
+		return addSize;
 
 	}
 
@@ -62,8 +62,8 @@ public class Hash {
 
 		// find the digest length
 		try {
-			MessageDigest md = MessageDigest.getInstance("MD5");
-			byte[] entityBytes = md.digest();
+			MessageDigest m = MessageDigest.getInstance("MD5");
+			byte[] entityBytes = m.digest();
 			mbit = entityBytes.length;
 			String hex = toHex(entityBytes);
 
